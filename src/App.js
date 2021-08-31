@@ -3,6 +3,13 @@ import Form from "./components/Form"
 import CardInfo from "./components/CardInfo"
 import Header from "./components/Header.js"
 import styled from "@emotion/styled"
+import { keyframes } from '@emotion/react'
+
+const fadeIn = keyframes`
+0% {opacity: 0;}
+100% {opacity: 1;}
+`
+
 const AppDiv = styled.div`
 background: #1c2431;
 min-height: 100vh;
@@ -14,11 +21,23 @@ const AppGridDiv = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-row: 1fr 1fr;
+  video{
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    animation-name: ${fadeIn};
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+  }
   @media (min-width: 800px){
     grid-template-columns: 1fr 1fr;
     grid-template-row: 1fr;
   }
 `
+
+
+
+
 function App() {
   const [coin, addCoin] = useState({
     TypeOfCurrency: "",

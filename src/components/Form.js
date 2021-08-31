@@ -59,7 +59,9 @@ const Form = ({addCoin}) =>{
     {code: "GBP", name: "Libra Esterlina"},
   ]
 
+  // eslint-disable-next-line 
   const [currency, addCurrency, Select] = useCurrency("Select your Currency", "", Currency);
+  // eslint-disable-next-line 
   const [stateCripto, addStateCripto, SelectCriptomoneda] = useCriptomoneda("Select your Criptomoneda", dataApi)
   //button
   const getInformation = e =>{
